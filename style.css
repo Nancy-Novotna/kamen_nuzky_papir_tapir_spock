@@ -1,0 +1,38 @@
+h1 {
+    background-color: rosybrown;
+    color: teal;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.obrazky {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;
+
+    gap: 150px;
+}
+
+.obrazky_hrac1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.obrazky_hrac2 {
+    display: flex;
+    flex-direction: column;
+}
