@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+  tlacitka();
   let button = document.querySelector('button');
 
   button.onclick = () => {
@@ -44,10 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // TO-DO
 // - hráč si může vybírat s čím bude hrát
 
-function buttonKAMEN() {
-  let kamen = document.querySelector(".kamen1");
+function tlacitka() {
+  const kamen = document.querySelector(".kamen1");
+  const papir = document.querySelector(".papir1");
+  const nuzky = document.querySelector(".nuzky1");
+  const tapir = document.querySelector(".tapir1");
+  const spock = document.querySelector(".spock1");
 
   kamen.onclick = () => {
-    console.log("Kámen");
+    papir.style.backgroundColor = "lightgray";
+    
+  }
+
+  papir.onclick = () => {
+    kamen.style.backgroundColor = "lightblue";
   }
 }
