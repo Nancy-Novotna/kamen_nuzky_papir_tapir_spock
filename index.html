@@ -5,43 +5,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+
   <script src="script.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bytesized&family=Coral+Pixels&family=DynaPuff:wght@400..700&family=Fascinate+Inline&family=Fontdiner+Swanky&family=Jacquard+12&family=Monofett&family=Pirata+One&family=Rubik+Glitch+Pop&family=Rubik+Moonrocks&family=Story+Script&family=VT323&display=swap"
+    rel="stylesheet">
+
   <title>Hra</title>
 </head>
 
 <body>
   <h1>Kámen - nůžky - papír</h1>
-  <div class="center">
-    <div id="obr1" class="obrazky">
-      <div class="obrazky_hrac1">
-        <img class="kamen1" src="0.png" alt="kamen">
-        <img class="nuzky1" src="1.png" alt="nuzky">
-        <img class="papir1" src="2.png" alt="papir">
-        <img class="spock1" src="3.png" alt="spock">
-        <img class="tapir1" src="4.png" alt="tapir">
+
+  <section>
+    <div class="center">
+
+      <div class="hraci_usporadani">
+        <div class="hraci">
+          <h2>Hráč 1</h2>
+          <h2>Hráč 2</h2>
+        </div>
+        <div class="vitezove">
+          <h3 id="vitez1"></h3>
+          <h3 id="vitez2"></h3>
+        </div>
       </div>
-      <div id="obr2" class="obrazky_hrac2">
-        <img class="kamen2" src="0.png" alt="kamen">
-        <img class="nuzky2" src="1.png" alt="nuzky">
-        <img class="papir2" src="2.png" alt="papir">
-        <img class="spock2" src="3.png" alt="spock">
-        <img class="tapir2" src="4.png" alt="tapir">
+
+      <div class="flex_obrazky">
+        <div id="obr1" class="obrazky_hrac1">
+          <img class="kamen1" src="0.png" alt="kamen">
+          <img class="nuzky1" src="1.png" alt="nuzky">
+          <img class="papir1" src="2.png" alt="papir">
+          <img class="spock1" src="3.png" alt="spock">
+          <img class="tapir1" src="4.png" alt="tapir">
+        </div>
+        <div id="obr2" class="obrazky_hrac2">
+          <img class="kamen2" src="Denjiii.PNG" alt="Denji">
+        </div>
       </div>
-    </div>
-    <!-- <tr>
-        <td><img id="obr1" src="0.png" alt=""></td>
-        <td><img id="obr2" src="1.png" alt=""></td>
-      </tr>
-    <tr> -->
-    <div class="text">
-      <h3 id="vitez1">Hráč 1</h3>
-      <h3 id="vitez2">Hráč 2</h3>
-
-      <button>HRAJ</button>
 
     </div>
-  </div>
 
+    <div class="tlacitka">
+      <button id="hraj">HRAJ</button>
+      <button id="reset">RESET</button>
+    </div>
+
+    <h2 class="vyhry">win counter</h2>
+  </section>
 </body>
 
 </html>

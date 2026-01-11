@@ -1,20 +1,5 @@
-h1 {
-    background-color: rosybrown;
-    color: teal;
-    text-align: center;
-}
-
-td {
-    text-align: center;
-}
-
-.text {
-    text-align: center;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
+body {
+    background-color: lightblue;
 }
 
 img {
@@ -22,21 +7,76 @@ img {
     height: 100px;
 }
 
-.obrazky {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 50px;
+h1 {
+    background-color: rosybrown;
+    text-align: center;
+    font-family: 'Jacquard 12', 'sans-serif';
+    font-size: 100px;
+}
 
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.center {
+    height: 800px;
+}
+
+.hraci_usporadani {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.hraci {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: 'Bytesized', sans-serif;
+    font-size: 30px;
+}
+
+.vitezove {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: 'Bytesized', sans-serif;
+    font-size: 20px;
+    height: 100px;
+}
+
+.flex_obrazky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 150px;
 }
 
 .obrazky_hrac1 {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .obrazky_hrac2 {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+
+.tlacitka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    height: 100px;
+}
+
+button {
+    width: 130px;
+    max-width: 150px;
+    max-height: 40px;
+    font-size: 20px;
 }

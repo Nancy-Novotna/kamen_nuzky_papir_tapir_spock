@@ -1,19 +1,94 @@
 document.addEventListener('DOMContentLoaded', () => {
-  tlacitka();
-  let button = document.querySelector('button');
 
-  button.onclick = () => {
+  let Hraj = document.getElementById('hraj');
+  let Reset = document.getElementById('reset');
+  let hrac1 = null;
+
+  const vitez1 = document.getElementById('vitez1'); // definované, aby nedošlo k chybě
+  const vitez2 = document.getElementById('vitez2'); // --//--
+  const obr2 = document.querySelector('#obr2 img');
+
+  const kamen1 = document.querySelector(".kamen1");
+  const papir1 = document.querySelector(".papir1");
+  const nuzky1 = document.querySelector(".nuzky1");
+  const tapir1 = document.querySelector(".tapir1");
+  const spock1 = document.querySelector(".spock1");
+
+  let wins = 0;
+  const vyhry = document.querySelector('.vyhry');
+
+  kamen1.onclick = () => {
+    papir1.style.display = "none";
+    nuzky1.style.display = "none";
+    tapir1.style.display = "none";
+    spock1.style.display = "none";
+    hrac1 = 0;
+    console.log('hrac1 =', hrac1);
+    Hraj.focus();
+
+    requestAnimationFrame(animace_hrac1);
+  }
+
+  nuzky1.onclick = () => {
+    kamen1.style.display = "none";
+    papir1.style.display = "none";
+    tapir1.style.display = "none";
+    spock1.style.display = "none";
+    hrac1 = 1;
+    console.log('hrac1 =', hrac1);
+    Hraj.focus();
+
+    requestAnimationFrame(animace_hrac1);
+  }
+
+  papir1.onclick = () => {
+    kamen1.style.display = "none";
+    nuzky1.style.display = "none";
+    tapir1.style.display = "none";
+    spock1.style.display = "none";
+    hrac1 = 2;
+    console.log('hrac1 =', hrac1);
+    Hraj.focus();
+
+    requestAnimationFrame(animace_hrac1);
+  }
+
+  spock1.onclick = () => {
+    kamen1.style.display = "none";
+    papir1.style.display = "none";
+    nuzky1.style.display = "none";
+    tapir1.style.display = "none";
+    hrac1 = 3;
+    console.log('hrac1 =', hrac1);
+    Hraj.focus();
+
+    requestAnimationFrame(animace_hrac1);
+  }
+
+  tapir1.onclick = () => {
+    kamen1.style.display = "none";
+    papir1.style.display = "none";
+    nuzky1.style.display = "none";
+    spock1.style.display = "none";
+    hrac1 = 4;
+    console.log('hrac1 =', hrac1);
+    Hraj.focus();
+
+    requestAnimationFrame(animace_hrac1);
+  }
+
+  Hraj.onclick = () => {
+
+    if (hrac1 === null) {
+      alert('Vyber volbu hráče 1 před spuštěním hry.');
+      return;
+    }
+
     do {
-      vitez1.innerHTML = "Hráč 1";
-      vitez2.innerHTML = "Hráč 2";
+      Hraj.disabled = true;
 
-      vitez1.style.color = "black";
-      vitez2.style.color = "black";
-
-      hrac1 = Math.floor(Math.random() * 5);
       hrac2 = Math.floor(Math.random() * 5);
 
-      obr1.src = hrac1 + ".png";
       obr2.src = hrac2 + ".png";
 
       if (hrac1 === hrac2) {
@@ -32,31 +107,39 @@ document.addEventListener('DOMContentLoaded', () => {
         vitez1.innerHTML = "Hráč 1<br/>vyhrál.";
         vitez1.style.color = "red";
         remiza = false;
+        Reset.focus();
+
       } else {
         vitez2.innerHTML = "Hráč 2<br/>vyhrál.";
         vitez2.style.color = "red";
         remiza = false;
+        Reset.focus();
       }
+
+      if (vitez1.innerHTML === "Hráč 1<br/>vyhrál.") {
+        wins++;
+        vyhry.textContent = `Počet výher: ${wins}`;
+      };
+
     } while (remiza);
   }
+
+  Reset.onclick = () => {
+    location.reload();
+  }
+
 });
 
-// TO-DO
-// - hráč si může vybírat s čím bude hrát
 
-function tlacitka() {
-  const kamen = document.querySelector(".kamen1");
-  const papir = document.querySelector(".papir1");
-  const nuzky = document.querySelector(".nuzky1");
-  const tapir = document.querySelector(".tapir1");
-  const spock = document.querySelector(".spock1");
+let pozice = 0;
 
-  kamen.onclick = () => {
-    papir.style.backgroundColor = "lightgray";
-    
-  }
+function animace_hrac1() {
+  pozice += 10;
+  document.querySelector('#obr1').style.transform = `translateY(${pozice}px)`;
+  document.querySelector('#obr2').style.transform = `translateY(${pozice}px)`;
 
-  papir.onclick = () => {
-    kamen.style.backgroundColor = "lightblue";
+  if (pozice < 220) {
+    requestAnimationFrame(animace_hrac1);
   }
 }
+
