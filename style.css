@@ -73,6 +73,8 @@ section {
 .obrazky_hrac1 img {
     border: 3px solid var(--color3);
     border-radius: 5px;
+
+    animation: animace 2s infinite alternate;
 }
 
 .obrazky_hrac2 {
@@ -83,6 +85,8 @@ section {
 .obrazky_hrac2 img {
     border: 3px solid var(--color3);
     border-radius: 5px;
+
+    animation: animace 2s infinite alternate;
 }
 
 .tlacitka {
@@ -105,5 +109,14 @@ button {
     background-color: var(--color2);
     border-radius: 10px 0px 10px 0px;
     border-color: var(--color5);
+}
 
+@keyframes animace {
+    0% {
+        border-color: var(--color3);
+    }
+
+    100% {
+        border-color: rgb(140, 103, 3);
+    }
 }
