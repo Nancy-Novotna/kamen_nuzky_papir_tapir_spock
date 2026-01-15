@@ -1,5 +1,13 @@
+:root {
+    --color1: rgb(55, 56, 84);
+    --color2: rgb(73, 50, 103);
+    --color3: rgb(158, 55, 159);
+    --color4: rgb(232, 106, 240);
+    --color5: rgb(123, 179, 255);
+}
+
 body {
-    background-color: lightblue;
+    background-color: var(--color1);
 }
 
 img {
@@ -8,7 +16,8 @@ img {
 }
 
 h1 {
-    background-color: rosybrown;
+    background-color: var(--color3);
+    border-radius: 10px 0px 10px 0px;
     text-align: center;
     font-family: 'Jacquard 12', 'sans-serif';
     font-size: 100px;
@@ -20,6 +29,7 @@ section {
     justify-content: center;
     flex-direction: column;
 }
+
 .center {
     height: 800px;
 }
@@ -60,9 +70,19 @@ section {
     gap: 10px;
 }
 
+.obrazky_hrac1 img {
+    border: 3px solid var(--color3);
+    border-radius: 5px;
+}
+
 .obrazky_hrac2 {
     display: flex;
     align-items: center;
+}
+
+.obrazky_hrac2 img {
+    border: 3px solid var(--color3);
+    border-radius: 5px;
 }
 
 .tlacitka {
@@ -78,5 +98,12 @@ button {
     width: 130px;
     max-width: 150px;
     max-height: 40px;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Bytesized', 'sans-serif';
+
+    color: var(--color5);
+    background-color: var(--color2);
+    border-radius: 10px 0px 10px 0px;
+    border-color: var(--color5);
+
 }
